@@ -1,18 +1,8 @@
-import os
 import numpy as np
 import numpy
 import gzip
-import sklearn.preprocessing
-import scipy
-import matplotlib.pyplot as plt
-from numpy import genfromtxt
-import cv2
 from sklearn.model_selection import train_test_split
-from sklearn.utils import shuffle
-
 from tensorflow.contrib.learn.python.learn.datasets import base
-from tensorflow.python.framework import dtypes
-from tensorflow.python.framework import random_seed
 from tensorflow.python.platform import gfile
 
 DEFAULT_SOURCE_URL = 'https://storage.googleapis.com/cvdf-datasets/mnist/'
