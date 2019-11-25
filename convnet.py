@@ -56,7 +56,8 @@ def create_convnet(x, n_class, is_training, weights_seed=0):
         c['stride'] = 1
         x = conv(x_image, c, weights_seed, 'SAME')
         x = bn(x, c)
-        x = leaky_relu(x)  # tf.nn.leaky_relu(x, alpha=0.1)
+        x = activation(x)
+        #x = leaky_relu(x)  # tf.nn.leaky_relu(x, alpha=0.1)
 
     # conv1b
     with tf.variable_scope('conv1b'):
@@ -65,7 +66,8 @@ def create_convnet(x, n_class, is_training, weights_seed=0):
         c['stride'] = 1
         x = conv(x, c, weights_seed, 'SAME')
         x = bn(x, c)
-        x = leaky_relu(x)
+        x = activation(x)
+        #x = leaky_relu(x)
 
     # conv1c
     with tf.variable_scope('conv1c'):
@@ -74,7 +76,8 @@ def create_convnet(x, n_class, is_training, weights_seed=0):
         c['stride'] = 1
         x = conv(x, c, weights_seed, 'SAME')
         x = bn(x, c)
-        x = leaky_relu(x)
+        x = activation(x)
+        #x = leaky_relu(x)
 
     # pool1
     x = _max_pool(x, ksize=2, stride=2)
@@ -91,7 +94,8 @@ def create_convnet(x, n_class, is_training, weights_seed=0):
         c['stride'] = 1
         x = conv(x, c, weights_seed, 'SAME')
         x = bn(x, c)
-        x = leaky_relu(x)
+        x = activation(x)
+        #x = leaky_relu(x)
 
     # conv2b
     with tf.variable_scope('conv2b'):
@@ -100,7 +104,8 @@ def create_convnet(x, n_class, is_training, weights_seed=0):
         c['stride'] = 1
         x = conv(x, c, weights_seed, 'SAME')
         x = bn(x, c)
-        x = leaky_relu(x)
+        x = activation(x)
+        #x = leaky_relu(x)
 
     # conv2c
     with tf.variable_scope('conv2c'):
@@ -109,7 +114,8 @@ def create_convnet(x, n_class, is_training, weights_seed=0):
         c['stride'] = 1
         x = conv(x, c, weights_seed, 'SAME')
         x = bn(x, c)
-        x = leaky_relu(x)
+        x = activation(x)
+        #x = leaky_relu(x)
 
     # pool2
     x = _max_pool(x, ksize=2, stride=2)
@@ -126,7 +132,8 @@ def create_convnet(x, n_class, is_training, weights_seed=0):
         c['stride'] = 1
         x = conv(x, c, weights_seed, 'VALID')
         x = bn(x, c)
-        x = leaky_relu(x)
+        x = activation(x)
+        #x = leaky_relu(x)
 
     # conv3b
     with tf.variable_scope('conv3b'):
@@ -135,7 +142,8 @@ def create_convnet(x, n_class, is_training, weights_seed=0):
         c['stride'] = 1
         x = conv(x, c, weights_seed, 'VALID')
         x = bn(x, c)
-        x = leaky_relu(x)
+        x = activation(x)
+        #x = leaky_relu(x)
 
     # conv3c
     with tf.variable_scope('conv3c'):
@@ -144,7 +152,8 @@ def create_convnet(x, n_class, is_training, weights_seed=0):
         c['stride'] = 1
         x = conv(x, c, weights_seed, 'VALID')
         x = bn(x, c)
-        x = leaky_relu(x)
+        x = activation(x)
+        #x = leaky_relu(x)
 
     # pool3
     x = _avg_pool2d(x, pool_size=[6, 6], strides=[1, 1])  # 6x6
