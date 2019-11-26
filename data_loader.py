@@ -155,12 +155,6 @@ class DataSet(object):
     end = self._index_in_epoch
     return self._images[start:end], self._labels[start:end]
 
-  def remove_epoch(self):
-      print('epoch removed')
-      self._index_in_epoch = 0
-      self._epochs_completed -= 1
-
-
 def read_data_sets(data_path, fake_data=False, one_hot=True,
                    percentage_train=1.,
                    validation_size=5000, source_url=DEFAULT_SOURCE_URL):
